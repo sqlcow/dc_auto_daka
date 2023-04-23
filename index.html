@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>东财学工自动打卡</title>
+	<meta charset="utf-8">
+	<style>
+		body {
+			background-color: black;
+			background-size: cover;
+			background-position: center;
+		}
+		
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+		}
+		
+		input[type="text"], input[type="password"] {
+			font-size: 24px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+			margin-bottom: 20px;
+			width: 50%;
+			text-align: center;
+			transform: scale(1.2);
+			transition: all 0.3s ease-in-out;
+		}
+		
+		input[type="text"]:focus, input[type="password"]:focus {
+			transform: scale(1.3);
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+		}
+		
+		input[type="submit"] {
+			background-color: #008CBA;
+			color: white;
+			padding: 10px 20px;
+			border-radius: 5px;
+			border: none;
+			font-size: 20px;
+			cursor: pointer;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		}
+		
+		label {
+			font-size: 24px;
+			color: white;
+		}
+		
+		h1 {
+			font-size: 36px;
+			color: white;
+			text-align: center;
+			margin-top: 100px;
+			text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+		}
+		a {
+			font-size: 36px;
+			color: white;
+			text-align: center;
+			margin-top: 100px;
+			text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+		}
+	</style>
+</head>
+<body>
+	<h1>请在这里提交东财学工账号密码</h1>
+	<form action="save_user_info.php" method="post">
+		<label for="username">账号：</label>
+		<input type="text" id="username" name="username" placeholder="默认为学号"><br><br>
+		<label for="password">密码：</label>
+		<input type="password" id="password" name="password" placeholder="默认为身份证后六位"><br><br>
+		<input type="submit" value="保存">
+	</form>
+	<h1>本项目将在每天六点自动打卡东财学工每日健康报送</h1>
+	<div style="display: flex; justify-content: center;">
+	<a href="/log.html">每日打卡日志监控</a>
+    </div>
+	<h1>本项目开源地址:https://github.com/sqlcow</h1>
+	<h1>本项目实现原理及部署教程httpss://sqlcow.gitee.io</h1>
+	<h1>联系作者邮箱：2623759349@qq.com</h1>
+</body>
+</html>

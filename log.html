@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>打卡日志</title>
+	<style>
+		body {
+			background-color: black;
+			color: white;
+			text-align: center;
+		}
+		pre {
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>打卡日志</h1>
+	<p>这里是打卡日志，每天六点自动更新：</p>
+	<pre id="decoded"></pre>
+	<script>
+		// 从服务器获取文件内容并解码为字符串
+		fetch('http://daka.sqlcow.com/log.txt')
+			.then(response => response.arrayBuffer())
+			.then(buffer => {
+				const decoder = new TextDecoder('utf-8');
+				const decoded = decoder.decode(buffer);
+				document.getElementById('decoded').textContent = decoded;
+			})
+			.catch(error => console.error(error));
+	</script>
+</body>
+</html>
